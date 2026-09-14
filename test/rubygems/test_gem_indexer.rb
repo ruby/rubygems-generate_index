@@ -78,15 +78,17 @@ class TestGemIndexer < Gem::TestCase
     specs_dump = Gem.read_binary specs_path
     specs = Marshal.load specs_dump
 
-    expected = [["a",      Gem::Version.new("1"),   "ruby"],
-                ["a",      Gem::Version.new("2"),   "ruby"],
-                ["a_evil", Gem::Version.new("9"),   "ruby"],
-                ["b",      Gem::Version.new("2"),   "ruby"],
-                ["c",      Gem::Version.new("1.2"), "ruby"],
-                ["d",      Gem::Version.new("2.0"), "ruby"],
-                ["dep_x",  Gem::Version.new("1"),   "ruby"],
-                ["pl",     Gem::Version.new("1"),   "i386-linux"],
-                ["x",      Gem::Version.new("1"),   "ruby"]]
+    expected = [
+      ["a",      Gem::Version.new("1"),   "ruby"],
+      ["a",      Gem::Version.new("2"),   "ruby"],
+      ["a_evil", Gem::Version.new("9"),   "ruby"],
+      ["b",      Gem::Version.new("2"),   "ruby"],
+      ["c",      Gem::Version.new("1.2"), "ruby"],
+      ["d",      Gem::Version.new("2.0"), "ruby"],
+      ["dep_x",  Gem::Version.new("1"),   "ruby"],
+      ["pl",     Gem::Version.new("1"),   "i386-linux"],
+      ["x",      Gem::Version.new("1"),   "ruby"],
+    ]
 
     assert_equal expected, specs
 
@@ -95,14 +97,16 @@ class TestGemIndexer < Gem::TestCase
     latest_specs_dump = Gem.read_binary latest_specs_path
     latest_specs = Marshal.load latest_specs_dump
 
-    expected = [["a",      Gem::Version.new("2"),   "ruby"],
-                ["a_evil", Gem::Version.new("9"),   "ruby"],
-                ["b",      Gem::Version.new("2"),   "ruby"],
-                ["c",      Gem::Version.new("1.2"), "ruby"],
-                ["d",      Gem::Version.new("2.0"), "ruby"],
-                ["dep_x",  Gem::Version.new("1"),   "ruby"],
-                ["pl",     Gem::Version.new("1"),   "i386-linux"],
-                ["x",      Gem::Version.new("1"),   "ruby"]]
+    expected = [
+      ["a",      Gem::Version.new("2"),   "ruby"],
+      ["a_evil", Gem::Version.new("9"),   "ruby"],
+      ["b",      Gem::Version.new("2"),   "ruby"],
+      ["c",      Gem::Version.new("1.2"), "ruby"],
+      ["d",      Gem::Version.new("2.0"), "ruby"],
+      ["dep_x",  Gem::Version.new("1"),   "ruby"],
+      ["pl",     Gem::Version.new("1"),   "i386-linux"],
+      ["x",      Gem::Version.new("1"),   "ruby"],
+    ]
 
     assert_equal expected, latest_specs, "latest_specs"
 
