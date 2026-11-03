@@ -23,7 +23,8 @@ jobs:
       matrix:
         os:
           - { name: Ubuntu, value: ubuntu-22.04 }
-          - { name: macOS, value: macos-14 }
+          - { name: macOS 26, value: macos-26 }
+          - { name: macOS 15, value: macos-15 }
           - { name: Windows, value: windows-2022 }
 
         ruby:
